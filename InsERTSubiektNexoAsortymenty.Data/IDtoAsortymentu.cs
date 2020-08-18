@@ -1,13 +1,13 @@
-﻿using InsERT.Moria.Asortymenty;
+﻿using InsERT.Moria.ModelDanych;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace InsERTSubiektNexoAsortymenty.Model
 {
-    public interface IRepoAsortymentu
+    public interface IDtoAsortymentu
     {
-        ICollection<IAsortyment> GetAsortyment();
+        IList<Asortyment> PodajAsortyment();
 
         bool ZmienOpis(string Id, string nowyOpis);
     }

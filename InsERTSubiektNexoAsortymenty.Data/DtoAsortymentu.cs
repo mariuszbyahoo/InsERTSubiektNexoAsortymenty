@@ -1,15 +1,17 @@
 ﻿using InsERT.Moria.Asortymenty;
+using InsERT.Moria.ModelDanych;
 using InsERT.Moria.Sfera;
 using InsERT.Mox.Product;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace InsERTSubiektNexoAsortymenty.Model
 {
-    public class RepoAsortymentu : IRepoAsortymentu
+    public class DtoAsortymentu : IDtoAsortymentu
     {
         private Uchwyt _sfera;
         private string _connectionString;
@@ -17,7 +19,7 @@ namespace InsERTSubiektNexoAsortymenty.Model
         private string _login;
         private string _password;
 
-        public RepoAsortymentu()
+        public DtoAsortymentu()
         {
             var jSettings = JToken.Parse(File.ReadAllText("appsettings.json"));
             _connectionString = (string)jSettings["connectionString"];
@@ -36,12 +38,21 @@ namespace InsERTSubiektNexoAsortymenty.Model
             _sfera = sfera;
         }
 
-        public ICollection<IAsortyment> GetAsortyment()
+        public IList<Asortyment> PodajAsortyment()
         {
             if (_sfera == null)
                 throw new InvalidOperationException("Najpierw ustanów połączenie ze Sferą");
 
-            throw new NotImplementedException();
+            var menedzerAsortymentow = _sfera.PodajObiektTypu<IAsortymenty>();
+
+            var dane =  menedzerAsortymentow.Dane.Wszystkie("Nazwa", "Opis");
+
+            var rezultat = new List<Asortyment>();
+            foreach(var dana in dane)
+            {
+                rezultat.Add(dana);
+            }
+            return rezultat;
         }
 
         public bool ZmienOpis(string Id, string nowyOpis)
