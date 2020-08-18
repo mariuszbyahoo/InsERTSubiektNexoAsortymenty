@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace InsERTSubiektNexoAsortymenty
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }
