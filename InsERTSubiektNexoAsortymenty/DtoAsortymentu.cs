@@ -42,7 +42,7 @@ namespace InsERTSubiektNexoAsortymenty
             {
                 var menedzerAsortymentow = sfera.PodajObiektTypu<IAsortymenty>();
 
-                var dane = menedzerAsortymentow.Dane.Wszystkie("Nazwa", "Opis");
+                var dane = menedzerAsortymentow.Dane.Wszystkie();
 
                 var rezultat = new List<Asortyment>();
                 foreach (var dana in dane)
