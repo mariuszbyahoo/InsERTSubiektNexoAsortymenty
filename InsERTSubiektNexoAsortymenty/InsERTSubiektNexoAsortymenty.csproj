@@ -10,8 +10,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>InsERTSubiektNexoAsortymenty</RootNamespace>
     <AssemblyName>InsERTSubiektNexoAsortymenty</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,9 +56,6 @@
     <Reference Include="InsERT.Moria.ModelDanych">
       <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\InsERT.Moria.ModelDanych.dll</HintPath>
     </Reference>
-    <Reference Include="InsERT.Moria.Security.Core">
-      <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\x86\InsERT.Moria.Security.Core.dll</HintPath>
-    </Reference>
     <Reference Include="InsERT.Moria.Sfera">
       <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\InsERT.Moria.Sfera.dll</HintPath>
     </Reference>
@@ -69,6 +67,9 @@
     </Reference>
     <Reference Include="InsERT.Mox.EntityFrameworkSupport">
       <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\InsERT.Mox.EntityFrameworkSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,6 +83,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DtoAsortymentu.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,8 +104,13 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
+    <None Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
