@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="InsERT.Moria.API">
       <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\InsERT.Moria.API.dll</HintPath>
     </Reference>
@@ -29,6 +33,12 @@
     <Reference Include="InsERT.Mox.EntityFrameworkSupport">
       <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\InsERT.Mox.EntityFrameworkSupport.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
