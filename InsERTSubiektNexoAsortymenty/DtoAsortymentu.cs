@@ -31,7 +31,7 @@ namespace InsERTSubiektNexoAsortymenty
         {
             DanePolaczenia danePolaczenia = DanePolaczenia.Jawne(_connectionString, _dbName, true);
             MenedzerPolaczen mp = new MenedzerPolaczen();
-            Uchwyt sfera = mp.Polacz(danePolaczenia, ProductId.Subiekt, ProductId.Rewizor);
+            Uchwyt sfera = mp.Polacz(danePolaczenia, ProductId.Subiekt);
             sfera.ZalogujOperatora(_login, _password);
             return sfera;
         }
