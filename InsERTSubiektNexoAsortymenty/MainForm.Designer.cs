@@ -73,6 +73,24 @@ namespace InsERTSubiektNexoAsortymenty
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.mainTable.DataSource = _dto.PodajAsortyment();
+
+            for (int i = 0; i < this.gridView1.Columns.Count; i++)
+            {
+                if(this.gridView1.Columns[i].FieldName.Equals("Nazwa") ||
+                    this.gridView1.Columns[i].FieldName.Equals("Opis") ||
+                    this.gridView1.Columns[i].FieldName.Equals("CenaEwidencyjna") ||
+                    this.gridView1.Columns[i].FieldName.Equals("Symbol") ||
+                    this.gridView1.Columns[i].FieldName.Equals("Id") ||
+                    this.gridView1.Columns[i].FieldName.Equals("WalutaCenyEwidencyjnej"))
+                {
+                    var columnName = this.gridView1.Columns[i].FieldName;
+                    this.gridView1.Columns[i].Visible = true;
+                }
+                else
+                {
+                    this.gridView1.Columns[i].Visible = false;
+                }
+            }
         }
 
         private DevExpress.XtraGrid.GridControl mainTable;
