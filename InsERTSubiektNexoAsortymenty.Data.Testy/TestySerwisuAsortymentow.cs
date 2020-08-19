@@ -8,9 +8,9 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace InsERTSubiektNexoAsortymenty.Data.Testy
 {
     [TestClass]
-    public class TestyDTOAsortymentu
+    public class TestySerwisuAsortymentow
     {
-        private static DtoAsortymentu DTO;
+        private static SerwisAsortymentow DTO;
         private string zastanyOpis;
         private readonly string _symbolDostawy = "DOSTAWA";
         private readonly string _testowyOpis = "testowyOpis";
@@ -21,7 +21,7 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
         [ClassInitialize]
         public static void TestFixtureSetUp(TestContext ctx)
         {
-            DTO = new DtoAsortymentu();
+            DTO = new SerwisAsortymentow();
         }
 
         [TestMethod]

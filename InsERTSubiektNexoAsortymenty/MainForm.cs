@@ -13,11 +13,11 @@ namespace InsERTSubiektNexoAsortymenty
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
-        private readonly DtoAsortymentu _dto;
+        private readonly SerwisAsortymentow _dto;
 
         public MainForm()
         {
-            _dto = new DtoAsortymentu();
+            _dto = new SerwisAsortymentow();
             InitializeComponent();
         }
 

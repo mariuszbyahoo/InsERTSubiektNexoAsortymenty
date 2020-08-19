@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace InsERTSubiektNexoAsortymenty.Data.Testy
 {
     [TestClass]
-    public class TestyDTOWalut
+    public class TestySerwisuWalut
     {
         [TestMethod]
         public void PodajSymbolWaluty___Gdy_Wywołany_Poprawnie___Zwroci_Niepusta_Liste_Walut()
         {
             // przygotuj
-            var dto = new DtoWalut();
+            var dto = new SerwisWalut();
             // działaj
             var waluty = dto.PodajWaluty();
 

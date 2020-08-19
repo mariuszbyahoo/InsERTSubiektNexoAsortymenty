@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace InsERTSubiektNexoAsortymenty
 {
-    public abstract class BazoweDto
+    public abstract class BazowySerwisModeluDanych
     {
         private string _connectionString;
         private string _dbName;
         private string _login;
         private string _password;
 
-        public BazoweDto()
+        public BazowySerwisModeluDanych()
         {
             var jSettings = JToken.Parse(File.ReadAllText("appsettings.json"));
             _connectionString = (string)jSettings["connectionString"];

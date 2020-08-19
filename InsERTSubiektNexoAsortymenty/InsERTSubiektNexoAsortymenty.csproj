@@ -83,9 +83,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BazoweDto.cs" />
-    <Compile Include="DtoAsortymentu.cs" />
-    <Compile Include="DtoWalut.cs" />
+    <Compile Include="BazowySerwisModeluDanych.cs" />
+    <Compile Include="SerwisAsortymentow.cs" />
+    <Compile Include="SerwisWalut.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
