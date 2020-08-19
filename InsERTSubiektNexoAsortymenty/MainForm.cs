@@ -18,5 +18,11 @@ namespace InsERTSubiektNexoAsortymenty
             _dto = new DtoAsortymentu();
             InitializeComponent();
         }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            /* Tu użyj DtoAsortymentu do wysłania poprzez InsertAPI żądania zmiany wiersza, gdzie nową wartością będzie 
+             ta pochodząca z CellValueChangedEventArgs */
+        }
     }
 }

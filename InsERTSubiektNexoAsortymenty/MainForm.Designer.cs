@@ -52,6 +52,7 @@ namespace InsERTSubiektNexoAsortymenty
             // 
             this.gridView1.GridControl = this.mainTable;
             this.gridView1.Name = "gridView1";
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // MainForm
             // 
@@ -77,10 +78,10 @@ namespace InsERTSubiektNexoAsortymenty
             for (int i = 0; i < this.gridView1.Columns.Count; i++)
             {
                 if(this.gridView1.Columns[i].FieldName.Equals("Nazwa") ||
-                    this.gridView1.Columns[i].FieldName.Equals("Opis") ||
                     this.gridView1.Columns[i].FieldName.Equals("CenaEwidencyjna") ||
                     this.gridView1.Columns[i].FieldName.Equals("Symbol") ||
-                    this.gridView1.Columns[i].FieldName.Equals("Id"))
+                    this.gridView1.Columns[i].FieldName.Equals("Id") ||
+                    this.gridView1.Columns[i].FieldName.Equals("Opis"))
                 {
                     var columnName = this.gridView1.Columns[i].FieldName;
                     this.gridView1.Columns[i].Visible = true;
