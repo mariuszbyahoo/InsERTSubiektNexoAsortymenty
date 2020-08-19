@@ -73,7 +73,7 @@ namespace InsERTSubiektNexoAsortymenty
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.mainTable.DataSource = _dto.PodajAsortyment();
+            this.mainTable.DataSource = _dto.PodajWszystkieAsortymenty();
 
             for (int i = 0; i < this.gridView1.Columns.Count; i++)
             {
