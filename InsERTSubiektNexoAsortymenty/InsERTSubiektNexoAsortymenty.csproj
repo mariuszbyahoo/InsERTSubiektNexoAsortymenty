@@ -85,7 +85,7 @@
   <ItemGroup>
     <Compile Include="BazoweDto.cs" />
     <Compile Include="DtoAsortymentu.cs" />
-    <Compile Include="DtoWaluty.cs" />
+    <Compile Include="DtoWalut.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -80,8 +80,7 @@ namespace InsERTSubiektNexoAsortymenty
                     this.gridView1.Columns[i].FieldName.Equals("Opis") ||
                     this.gridView1.Columns[i].FieldName.Equals("CenaEwidencyjna") ||
                     this.gridView1.Columns[i].FieldName.Equals("Symbol") ||
-                    this.gridView1.Columns[i].FieldName.Equals("Id") ||
-                    this.gridView1.Columns[i].FieldName.Equals("WalutaCenyEwidencyjnej"))
+                    this.gridView1.Columns[i].FieldName.Equals("Id"))
                 {
                     var columnName = this.gridView1.Columns[i].FieldName;
                     this.gridView1.Columns[i].Visible = true;
