@@ -14,9 +14,9 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
         public void PodajAsortyment___Gdy_Zostanie_Wywolane_Poprawnie___Zwroci_Zawartosc_Tabeli_Asortymenty_Jako_Niepusta_Liste_Implementujaca_IBindingList()
         {
             // Przygotuj
-            var Dto = new DtoAsortymentu();
+            var dto = new DtoAsortymentu();
             // Działaj
-            var produkty = Dto.PodajAsortyment();
+            var produkty = dto.PodajAsortyment();
 
             // Sprawdź
             produkty.Count.Should().BeGreaterThan(0);
@@ -27,9 +27,9 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
         public void PodajAsortyment___Gdy_Zostanie_Wywolane_Poprawnie___Encje_Zawarte_W_Liscie_Beda_Typu_Asortyment()
         {
             // Przygotuj
-            var Dto = new DtoAsortymentu();
+            var dto = new DtoAsortymentu();
             // Działaj
-            var produkty = Dto.PodajAsortyment();
+            var produkty = dto.PodajAsortyment();
 
             // Sprawdź
             produkty[0].Should().BeOfType<Asortyment>();
