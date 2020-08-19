@@ -12,31 +12,8 @@ using System.Text;
 
 namespace InsERTSubiektNexoAsortymenty
 {
-    public class DtoAsortymentu
+    public class DtoAsortymentu : BazoweDto
     {
-        private string _connectionString;
-        private string _dbName;
-        private string _login;
-        private string _password;
-
-        public DtoAsortymentu()
-        {
-            var jSettings = JToken.Parse(File.ReadAllText("appsettings.json"));
-            _connectionString = (string)jSettings["connectionString"];
-            _dbName = (string)jSettings["DbName"];
-            _login = (string)jSettings["Login"];
-            _password = (string)jSettings["Password"];
-        }
-
-        private Uchwyt PolaczZeSfera()
-        {
-            DanePolaczenia danePolaczenia = DanePolaczenia.Jawne(_connectionString, _dbName, true);
-            MenedzerPolaczen mp = new MenedzerPolaczen();
-            Uchwyt sfera = mp.Polacz(danePolaczenia, ProductId.Subiekt);
-            sfera.ZalogujOperatora(_login, _password);
-            return sfera;
-        }
-
         public IList<Asortyment> PodajAsortyment()
         {
             using (var sfera = PolaczZeSfera())
