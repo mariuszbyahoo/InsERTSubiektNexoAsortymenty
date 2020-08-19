@@ -23,6 +23,10 @@ namespace InsERTSubiektNexoAsortymenty
         {
             /* Tu użyj DtoAsortymentu do wysłania poprzez InsertAPI żądania zmiany wiersza, gdzie nową wartością będzie 
              ta pochodząca z CellValueChangedEventArgs */
+            var procesowanyAsortyment = _dto.PodajKonkretnyAsortyment(e.RowHandle);
+            procesowanyAsortyment.Opis = e.Value.ToString();
+            // Zmieniam w pamięci programu opis obiektu Asortyment, ale to interfejs IAsortyment ma stosowną metodę
+            
         }
     }
 }
