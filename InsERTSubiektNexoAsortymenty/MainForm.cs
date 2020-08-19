@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraGrid.Views.Base;
+using InsERT.Moria.Asortymenty;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +21,14 @@ namespace InsERTSubiektNexoAsortymenty
             InitializeComponent();
         }
 
-        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        private void gridView1_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
-            /* Tu użyj DtoAsortymentu do wysłania poprzez InsertAPI żądania zmiany wiersza, gdzie nową wartością będzie 
-             ta pochodząca z CellValueChangedEventArgs */
-            var procesowanyAsortyment = _dto.PodajKonkretnyAsortyment(e.RowHandle);
-            procesowanyAsortyment.Opis = e.Value.ToString();
-            // Zmieniam w pamięci programu opis obiektu Asortyment, ale to interfejs IAsortyment ma stosowną metodę
-            
+            if (e.Column.FieldName.Equals("Opis"))
+            {
+                var procesowanyAsortyment = _dto.PodajKonkretnyAsortyment(e.RowHandle);
+
+                _dto.ZmienOpis(procesowanyAsortyment.Symbol, e.Value.ToString());
+            }
         }
     }
 }
