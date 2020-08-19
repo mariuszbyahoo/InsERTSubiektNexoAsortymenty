@@ -5,6 +5,7 @@ using InsERT.Mox.Product;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -44,7 +45,7 @@ namespace InsERTSubiektNexoAsortymenty
 
                 var dane = menedzerAsortymentow.Dane.Wszystkie();
 
-                var rezultat = new List<Asortyment>();
+                var rezultat = new BindingList<Asortyment>();
                 foreach (var dana in dane)
                 {
                     rezultat.Add(dana);
