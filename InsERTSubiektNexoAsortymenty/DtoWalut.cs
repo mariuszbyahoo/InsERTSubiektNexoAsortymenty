@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace InsERTSubiektNexoAsortymenty
 {
-    public class DtoWaluty : BazoweDto
+    public class DtoWalut : BazoweDto
     {
         public IList<Waluta> PodajWaluty()
         {

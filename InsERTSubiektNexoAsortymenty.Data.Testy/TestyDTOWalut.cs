@@ -16,7 +16,7 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
         public void PodajSymbolWaluty___Gdy_Wywołany_Poprawnie___Zwroci_Niepusta_Liste_Walut()
         {
             // przygotuj
-            var dto = new DtoWaluty();
+            var dto = new DtoWalut();
             // działaj
             var waluty = dto.PodajWaluty();
 
