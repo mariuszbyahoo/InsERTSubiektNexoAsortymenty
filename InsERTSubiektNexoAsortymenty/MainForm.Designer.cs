@@ -1,4 +1,6 @@
-﻿namespace InsERTSubiektNexoAsortymenty
+﻿using System;
+
+namespace InsERTSubiektNexoAsortymenty
 {
     partial class MainForm
     {
@@ -44,6 +46,7 @@
             this.mainTable.TabIndex = 0;
             this.mainTable.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.mainTable.Load += new System.EventHandler(this.MainForm_Load);
             // 
             // gridView1
             // 
@@ -66,6 +69,11 @@
         }
 
         #endregion
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.mainTable.DataSource = _dto.PodajAsortyment();
+        }
 
         private DevExpress.XtraGrid.GridControl mainTable;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
