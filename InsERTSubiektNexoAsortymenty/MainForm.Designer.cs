@@ -52,6 +52,7 @@ namespace InsERTSubiektNexoAsortymenty
             // 
             this.gridView1.GridControl = this.mainTable;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // MainForm
