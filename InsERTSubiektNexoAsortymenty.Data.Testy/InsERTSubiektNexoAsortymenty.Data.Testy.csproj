@@ -72,6 +72,7 @@
   <ItemGroup>
     <Compile Include="TestySerwisuAsortymentow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestySerwisuKlientow.cs" />
     <Compile Include="TestySerwisuWalut.cs" />
   </ItemGroup>
   <ItemGroup>
