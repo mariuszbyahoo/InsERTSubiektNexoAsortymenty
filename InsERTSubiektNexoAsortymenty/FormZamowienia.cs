@@ -12,22 +12,26 @@ using InsERT.Moria.ModelDanych;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Data;
+using DevExpress.XtraEditors.Controls;
 
 namespace InsERTSubiektNexoAsortymenty
 {
     public partial class FormZamowienia : DevExpress.XtraEditors.XtraForm
     {
         private readonly Asortyment[] _asortymenty;
+        private readonly SerwisKlientow _serwisKlientow;
         private Dictionary<int, int> wolumenZamowionychProduktow = new Dictionary<int, int>();
 
     public FormZamowienia(Asortyment[] asortymenty)
         {
             InitializeComponent();
             _asortymenty = asortymenty;
+            _serwisKlientow = new SerwisKlientow();
         }
 
         private void tabelaWybranychProduktow_Load(object sender, EventArgs e)
         {
+            // Zapełnienie kolumn
             this.tabelaWybranychProduktow.DataSource = _asortymenty;
             for (int i = 0; i < this.widokTabeliWybranychProduktow.Columns.Count; i++)
             {
@@ -42,6 +46,17 @@ namespace InsERTSubiektNexoAsortymenty
                 }
             }
             var kolumnaIlosc = new KolumnaIlosc(widokTabeliWybranychProduktow);
+
+            var klienci = _serwisKlientow.PodajWszystkichKlientow();
+
+            // Zapełnienie pola wyboru
+            ComboBoxItemCollection zbiorKlientowDoWyboru = this.poleWyboruKlienta.Properties.Items;
+            zbiorKlientowDoWyboru.BeginUpdate();
+            for (int i = 0; i < klienci.Length; i++)
+            {
+                zbiorKlientowDoWyboru.Add(new KlientInfo(klienci[i]));
+            }
+            zbiorKlientowDoWyboru.EndUpdate();
         }
 
         private void widokTabeliWybranychProduktow_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
@@ -72,6 +87,12 @@ namespace InsERTSubiektNexoAsortymenty
         }
 
         private void createOrderButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void tabelaWybranychProduktow_Click(object sender, EventArgs e)
         {
 
         }
