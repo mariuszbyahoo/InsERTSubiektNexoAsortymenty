@@ -131,7 +131,6 @@
             this.tabelaWybranychProduktow.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.widokTabeliWybranychProduktow});
             this.tabelaWybranychProduktow.Load += new System.EventHandler(this.tabelaWybranychProduktow_Load);
-            this.tabelaWybranychProduktow.Click += new System.EventHandler(this.tabelaWybranychProduktow_Click);
             // 
             // widokTabeliWybranychProduktow
             // 

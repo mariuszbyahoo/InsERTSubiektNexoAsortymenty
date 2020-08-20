@@ -20,13 +20,14 @@ namespace InsERTSubiektNexoAsortymenty
     {
         private readonly Asortyment[] _asortymenty;
         private readonly SerwisKlientow _serwisKlientow;
-        private Dictionary<int, int> wolumenZamowionychProduktow = new Dictionary<int, int>();
+        private readonly Dictionary<int, int> _wolumenZamowionychProduktow;
 
     public FormZamowienia(Asortyment[] asortymenty)
         {
             InitializeComponent();
             _asortymenty = asortymenty;
             _serwisKlientow = new SerwisKlientow();
+            _wolumenZamowionychProduktow = new Dictionary<int, int>();
         }
 
         private void tabelaWybranychProduktow_Load(object sender, EventArgs e)
@@ -65,17 +66,17 @@ namespace InsERTSubiektNexoAsortymenty
             {
                 for (int i = 0; i < this.widokTabeliWybranychProduktow.RowCount; i++)
                 {
-                    if(!wolumenZamowionychProduktow.ContainsKey(i))
-                        wolumenZamowionychProduktow.Add(i, 1);
+                    if(!_wolumenZamowionychProduktow.ContainsKey(i))
+                        _wolumenZamowionychProduktow.Add(i, 1);
                 }
                 if (e.IsGetData)
                 {
-                    if (wolumenZamowionychProduktow.ContainsKey(e.ListSourceRowIndex))
-                        e.Value = wolumenZamowionychProduktow[e.ListSourceRowIndex];
+                    if (_wolumenZamowionychProduktow.ContainsKey(e.ListSourceRowIndex))
+                        e.Value = _wolumenZamowionychProduktow[e.ListSourceRowIndex];
                 }
                 if (e.IsSetData && e.Value != null)
                 {
-                    wolumenZamowionychProduktow[e.ListSourceRowIndex] = (int)e.Value;
+                    _wolumenZamowionychProduktow[e.ListSourceRowIndex] = (int)e.Value;
                 }
             }
         }
