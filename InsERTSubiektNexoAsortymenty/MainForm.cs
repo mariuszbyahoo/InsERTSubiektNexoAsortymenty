@@ -43,6 +43,8 @@ namespace InsERTSubiektNexoAsortymenty
                 wybraneEncje[i] = (Asortyment)encja;
             }
             // I tutaj wywołaj okno dialogowe jako callback
+            var dialog = new FormZamowienia(wybraneEncje);
+            dialog.ShowDialog();
         }
     }
 }

@@ -45,6 +45,7 @@
     <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="InsERT.Moria.API">
       <HintPath>..\..\..\DotNetInsertSDK\nexoSDK_31.1.2.3799\Bin\InsERT.Moria.API.dll</HintPath>
     </Reference>
@@ -73,6 +74,7 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -85,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BazowySerwisModeluDanych.cs" />
+    <Compile Include="FormZamowienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormZamowienia.Designer.cs">
+      <DependentUpon>FormZamowienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="SerwisAsortymentow.cs" />
     <Compile Include="SerwisWalut.cs" />
     <Compile Include="MainForm.cs">
@@ -95,6 +103,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormZamowienia.resx">
+      <DependentUpon>FormZamowienia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
