@@ -26,11 +26,6 @@ namespace InsERTSubiektNexoAsortymenty
             _asortymenty = asortymenty;
         }
 
-        private void simpleButton2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tabelaWybranychProduktow_Load(object sender, EventArgs e)
         {
             this.tabelaWybranychProduktow.DataSource = _asortymenty;
@@ -68,6 +63,17 @@ namespace InsERTSubiektNexoAsortymenty
                     wolumenZamowionychProduktow[e.ListSourceRowIndex] = (int)e.Value;
                 }
             }
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
+        }
+
+        private void createOrderButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

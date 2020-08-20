@@ -60,7 +60,7 @@
             this.createOrderButton.Size = new System.Drawing.Size(94, 62);
             this.createOrderButton.TabIndex = 1;
             this.createOrderButton.Text = "Zapisz";
-            this.createOrderButton.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.createOrderButton.Click += new System.EventHandler(this.createOrderButton_Click);
             // 
             // cancelButton
             // 
@@ -70,6 +70,7 @@
             this.cancelButton.Size = new System.Drawing.Size(94, 62);
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Anuluj";
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // panelDanychFormyZamowienia
             // 
