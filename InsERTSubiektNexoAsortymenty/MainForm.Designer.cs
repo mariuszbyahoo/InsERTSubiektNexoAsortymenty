@@ -31,14 +31,14 @@ namespace InsERTSubiektNexoAsortymenty
         private void InitializeComponent()
         {
             this.mainTable = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.widokMainView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelsSplitter = new DevExpress.XtraEditors.SplitterControl();
-            this.orderButton = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.buttonSplitter1 = new DevExpress.XtraEditors.SplitterControl();
+            this.orderButton = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widokMainView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -49,20 +49,20 @@ namespace InsERTSubiektNexoAsortymenty
             // 
             this.mainTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTable.Location = new System.Drawing.Point(2, 63);
-            this.mainTable.MainView = this.gridView1;
+            this.mainTable.MainView = this.widokMainView;
             this.mainTable.Name = "mainTable";
             this.mainTable.Size = new System.Drawing.Size(733, 277);
             this.mainTable.TabIndex = 0;
             this.mainTable.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.widokMainView});
             this.mainTable.Load += new System.EventHandler(this.MainForm_Load);
             // 
-            // gridView1
+            // widokMainView
             // 
-            this.gridView1.GridControl = this.mainTable;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.widokMainView.GridControl = this.mainTable;
+            this.widokMainView.Name = "widokMainView";
+            this.widokMainView.OptionsSelection.MultiSelect = true;
+            this.widokMainView.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // panelControl1
             // 
@@ -75,16 +75,6 @@ namespace InsERTSubiektNexoAsortymenty
             this.panelControl1.Size = new System.Drawing.Size(737, 342);
             this.panelControl1.TabIndex = 1;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.buttonSplitter1);
-            this.panelControl2.Controls.Add(this.orderButton);
-            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(2, 2);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(733, 61);
-            this.panelControl2.TabIndex = 0;
-            // 
             // panelsSplitter
             // 
             this.panelsSplitter.Cursor = System.Windows.Forms.Cursors.Default;
@@ -95,6 +85,26 @@ namespace InsERTSubiektNexoAsortymenty
             this.panelsSplitter.Size = new System.Drawing.Size(733, 12);
             this.panelsSplitter.TabIndex = 1;
             this.panelsSplitter.TabStop = false;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.buttonSplitter1);
+            this.panelControl2.Controls.Add(this.orderButton);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelControl2.Location = new System.Drawing.Point(2, 2);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(733, 61);
+            this.panelControl2.TabIndex = 0;
+            // 
+            // buttonSplitter1
+            // 
+            this.buttonSplitter1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonSplitter1.Enabled = false;
+            this.buttonSplitter1.Location = new System.Drawing.Point(96, 2);
+            this.buttonSplitter1.Name = "buttonSplitter1";
+            this.buttonSplitter1.Size = new System.Drawing.Size(12, 57);
+            this.buttonSplitter1.TabIndex = 1;
+            this.buttonSplitter1.TabStop = false;
             // 
             // orderButton
             // 
@@ -111,16 +121,6 @@ namespace InsERTSubiektNexoAsortymenty
             this.orderButton.Text = "Zamów";
             this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
-            // buttonSplitter1
-            // 
-            this.buttonSplitter1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonSplitter1.Enabled = false;
-            this.buttonSplitter1.Location = new System.Drawing.Point(96, 2);
-            this.buttonSplitter1.Name = "buttonSplitter1";
-            this.buttonSplitter1.Size = new System.Drawing.Size(12, 57);
-            this.buttonSplitter1.TabIndex = 1;
-            this.buttonSplitter1.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -131,7 +131,7 @@ namespace InsERTSubiektNexoAsortymenty
             this.Name = "MainForm";
             this.Text = "Asortyment";
             ((System.ComponentModel.ISupportInitialize)(this.mainTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widokMainView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -146,26 +146,26 @@ namespace InsERTSubiektNexoAsortymenty
         {
             this.mainTable.DataSource = _dto.PodajWszystkieAsortymenty();
 
-            for (int i = 0; i < this.gridView1.Columns.Count; i++)
+            for (int i = 0; i < this.widokMainView.Columns.Count; i++)
             {
-                if(this.gridView1.Columns[i].FieldName.Equals("Nazwa") ||
-                    this.gridView1.Columns[i].FieldName.Equals("CenaEwidencyjna") ||
-                    this.gridView1.Columns[i].FieldName.Equals("Symbol") ||
-                    this.gridView1.Columns[i].FieldName.Equals("Id") ||
-                    this.gridView1.Columns[i].FieldName.Equals("Opis"))
+                if(this.widokMainView.Columns[i].FieldName.Equals("Nazwa") ||
+                    this.widokMainView.Columns[i].FieldName.Equals("CenaEwidencyjna") ||
+                    this.widokMainView.Columns[i].FieldName.Equals("Symbol") ||
+                    this.widokMainView.Columns[i].FieldName.Equals("Id") ||
+                    this.widokMainView.Columns[i].FieldName.Equals("Opis"))
                 {
-                    var columnName = this.gridView1.Columns[i].FieldName;
-                    this.gridView1.Columns[i].Visible = true;
+                    var columnName = this.widokMainView.Columns[i].FieldName;
+                    this.widokMainView.Columns[i].Visible = true;
                 }
                 else
                 {
-                    this.gridView1.Columns[i].Visible = false;
+                    this.widokMainView.Columns[i].Visible = false;
                 }
             }
         }
 
         private DevExpress.XtraGrid.GridControl mainTable;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView widokMainView;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SplitterControl panelsSplitter;
         private DevExpress.XtraEditors.PanelControl panelControl2;

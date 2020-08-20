@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.panelPrzyciskowFormyZamowienia = new DevExpress.XtraEditors.PanelControl();
-            this.cancelButton = new DevExpress.XtraEditors.SimpleButton();
             this.createOrderButton = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelButton = new DevExpress.XtraEditors.SimpleButton();
             this.panelDanychFormyZamowienia = new DevExpress.XtraEditors.PanelControl();
+            this.tabelaWybranychProduktow = new DevExpress.XtraGrid.GridControl();
+            this.widokTabeliWybranychProduktow = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.panelPrzyciskowFormyZamowienia)).BeginInit();
             this.panelPrzyciskowFormyZamowienia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelDanychFormyZamowienia)).BeginInit();
+            this.panelDanychFormyZamowienia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaWybranychProduktow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widokTabeliWybranychProduktow)).BeginInit();
             this.SuspendLayout();
             // 
             // panelPrzyciskowFormyZamowienia
@@ -42,10 +47,20 @@
             this.panelPrzyciskowFormyZamowienia.Controls.Add(this.createOrderButton);
             this.panelPrzyciskowFormyZamowienia.Controls.Add(this.cancelButton);
             this.panelPrzyciskowFormyZamowienia.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelPrzyciskowFormyZamowienia.Location = new System.Drawing.Point(0, 194);
+            this.panelPrzyciskowFormyZamowienia.Location = new System.Drawing.Point(0, 516);
             this.panelPrzyciskowFormyZamowienia.Name = "panelPrzyciskowFormyZamowienia";
-            this.panelPrzyciskowFormyZamowienia.Size = new System.Drawing.Size(298, 66);
+            this.panelPrzyciskowFormyZamowienia.Size = new System.Drawing.Size(1182, 66);
             this.panelPrzyciskowFormyZamowienia.TabIndex = 0;
+            // 
+            // createOrderButton
+            // 
+            this.createOrderButton.Dock = System.Windows.Forms.DockStyle.Right;
+            this.createOrderButton.Location = new System.Drawing.Point(1086, 2);
+            this.createOrderButton.Name = "createOrderButton";
+            this.createOrderButton.Size = new System.Drawing.Size(94, 62);
+            this.createOrderButton.TabIndex = 1;
+            this.createOrderButton.Text = "Zapisz";
+            this.createOrderButton.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // cancelButton
             // 
@@ -56,29 +71,38 @@
             this.cancelButton.TabIndex = 0;
             this.cancelButton.Text = "Anuluj";
             // 
-            // createOrderButton
-            // 
-            this.createOrderButton.Dock = System.Windows.Forms.DockStyle.Right;
-            this.createOrderButton.Location = new System.Drawing.Point(202, 2);
-            this.createOrderButton.Name = "createOrderButton";
-            this.createOrderButton.Size = new System.Drawing.Size(94, 62);
-            this.createOrderButton.TabIndex = 1;
-            this.createOrderButton.Text = "Zapisz";
-            this.createOrderButton.Click += new System.EventHandler(this.simpleButton2_Click);
-            // 
             // panelDanychFormyZamowienia
             // 
+            this.panelDanychFormyZamowienia.Controls.Add(this.tabelaWybranychProduktow);
             this.panelDanychFormyZamowienia.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDanychFormyZamowienia.Location = new System.Drawing.Point(0, 0);
             this.panelDanychFormyZamowienia.Name = "panelDanychFormyZamowienia";
-            this.panelDanychFormyZamowienia.Size = new System.Drawing.Size(298, 194);
+            this.panelDanychFormyZamowienia.Size = new System.Drawing.Size(1182, 516);
             this.panelDanychFormyZamowienia.TabIndex = 1;
+            // 
+            // tabelaWybranychProduktow
+            // 
+            this.tabelaWybranychProduktow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabelaWybranychProduktow.Location = new System.Drawing.Point(2, 2);
+            this.tabelaWybranychProduktow.MainView = this.widokTabeliWybranychProduktow;
+            this.tabelaWybranychProduktow.Name = "tabelaWybranychProduktow";
+            this.tabelaWybranychProduktow.Size = new System.Drawing.Size(1178, 512);
+            this.tabelaWybranychProduktow.TabIndex = 0;
+            this.tabelaWybranychProduktow.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.widokTabeliWybranychProduktow});
+            this.tabelaWybranychProduktow.Load += new System.EventHandler(this.tabelaWybranychProduktow_Load);
+            // 
+            // widokTabeliWybranychProduktow
+            // 
+            this.widokTabeliWybranychProduktow.GridControl = this.tabelaWybranychProduktow;
+            this.widokTabeliWybranychProduktow.Name = "widokTabeliWybranychProduktow";
+            this.widokTabeliWybranychProduktow.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.widokTabeliWybranychProduktow_CustomUnboundColumnData);
             // 
             // FormZamowienia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(298, 260);
+            this.ClientSize = new System.Drawing.Size(1182, 582);
             this.Controls.Add(this.panelDanychFormyZamowienia);
             this.Controls.Add(this.panelPrzyciskowFormyZamowienia);
             this.Name = "FormZamowienia";
@@ -86,6 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelPrzyciskowFormyZamowienia)).EndInit();
             this.panelPrzyciskowFormyZamowienia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelDanychFormyZamowienia)).EndInit();
+            this.panelDanychFormyZamowienia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaWybranychProduktow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.widokTabeliWybranychProduktow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,5 +123,7 @@
         private DevExpress.XtraEditors.SimpleButton createOrderButton;
         private DevExpress.XtraEditors.SimpleButton cancelButton;
         private DevExpress.XtraEditors.PanelControl panelDanychFormyZamowienia;
+        private DevExpress.XtraGrid.GridControl tabelaWybranychProduktow;
+        private DevExpress.XtraGrid.Views.Grid.GridView widokTabeliWybranychProduktow;
     }
 }
