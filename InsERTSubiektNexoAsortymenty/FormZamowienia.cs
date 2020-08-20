@@ -88,13 +88,14 @@ namespace InsERTSubiektNexoAsortymenty
 
         private void createOrderButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-
-        private void tabelaWybranychProduktow_Click(object sender, EventArgs e)
-        {
-
+            if(this.poleWyboruKlienta.SelectedIndex > -1)
+            {
+                // Dodaj zamówienie poprzez API
+            }
+            else
+            {
+                // Wyświetl komunikat o niedokonanym wyborze Klienta.
+            }
         }
     }
 }
