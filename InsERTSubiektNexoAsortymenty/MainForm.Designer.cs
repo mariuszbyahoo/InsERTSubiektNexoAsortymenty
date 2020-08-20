@@ -109,6 +109,7 @@ namespace InsERTSubiektNexoAsortymenty
             this.orderButton.Size = new System.Drawing.Size(94, 57);
             this.orderButton.TabIndex = 0;
             this.orderButton.Text = "Zamów";
+            this.orderButton.Click += new System.EventHandler(this.orderButton_Click);
             // 
             // buttonSplitter1
             // 

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraGrid.Views.Base;
 using InsERT.Moria.Asortymenty;
+using InsERT.Moria.ModelDanych;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,19 @@ namespace InsERTSubiektNexoAsortymenty
 
                 _dto.ZmienOpis(procesowanyAsortyment.Symbol, e.Value.ToString());
             }
+        }
+
+        private void orderButton_Click(object sender, EventArgs e)
+        {
+            var wybraneWiersze = this.gridView1.GetSelectedRows();
+
+            var wybraneEncje = new Asortyment[wybraneWiersze.Length];
+            for (int i = 0; i < wybraneWiersze.Length; i++)
+            {
+                var encja = this.gridView1.GetRow(wybraneWiersze[i]);
+                wybraneEncje[i] = (Asortyment)encja;
+            }
+            // I tutaj wywołaj okno dialogowe jako callback
         }
     }
 }
