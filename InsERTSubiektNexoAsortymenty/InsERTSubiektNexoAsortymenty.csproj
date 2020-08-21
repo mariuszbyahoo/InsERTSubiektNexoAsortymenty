@@ -86,20 +86,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BazowySerwisModeluDanych.cs" />
     <Compile Include="FormZamowienia.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormZamowienia.Designer.cs">
       <DependentUpon>FormZamowienia.cs</DependentUpon>
     </Compile>
-    <Compile Include="KlientInfo.cs" />
     <Compile Include="KolumnaIlosc.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SerwisAsortymentow.cs" />
-    <Compile Include="SerwisKlientow.cs" />
-    <Compile Include="SerwisWalut.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +134,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InsERTSubiektNexoAsortymenty.Data\InsERTSubiektNexoAsortymenty.Data.csproj">
+      <Project>{4c6a3ebb-19a1-4244-9d3e-75e475602424}</Project>
+      <Name>InsERTSubiektNexoAsortymenty.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

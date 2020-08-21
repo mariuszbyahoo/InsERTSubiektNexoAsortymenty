@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsERTSubiektNexoAsortymenty
+namespace InsERTSubiektNexoAsortymenty.Data.Serwisy
 {
     public abstract class BazowySerwisModeluDanych
     {

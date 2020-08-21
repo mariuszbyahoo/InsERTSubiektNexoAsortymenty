@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using FluentAssertions;
 using InsERT.Moria.ModelDanych;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace InsERTSubiektNexoAsortymenty.Data.Testy

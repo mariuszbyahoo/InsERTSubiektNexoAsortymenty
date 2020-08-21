@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsERTSubiektNexoAsortyment
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsERTSubiektNexoAsortymenty.Data.Testy", "InsERTSubiektNexoAsortymenty.Data.Testy\InsERTSubiektNexoAsortymenty.Data.Testy.csproj", "{2AFDE013-4EA7-4BA2-931A-3C9C45903C0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsERTSubiektNexoAsortymenty.Data", "InsERTSubiektNexoAsortymenty.Data\InsERTSubiektNexoAsortymenty.Data.csproj", "{4C6A3EBB-19A1-4244-9D3E-75E475602424}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2AFDE013-4EA7-4BA2-931A-3C9C45903C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AFDE013-4EA7-4BA2-931A-3C9C45903C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AFDE013-4EA7-4BA2-931A-3C9C45903C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6A3EBB-19A1-4244-9D3E-75E475602424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6A3EBB-19A1-4244-9D3E-75E475602424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6A3EBB-19A1-4244-9D3E-75E475602424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6A3EBB-19A1-4244-9D3E-75E475602424}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy;
 
 namespace InsERTSubiektNexoAsortymenty.Data.Testy
 {

@@ -1,6 +1,6 @@
 ﻿using InsERT.Moria.ModelDanych;
 
-namespace InsERTSubiektNexoAsortymenty
+namespace InsERTSubiektNexoAsortymenty.Data.Poco
 {
     public class KlientInfo
     {

@@ -80,6 +80,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\InsERTSubiektNexoAsortymenty.Data\InsERTSubiektNexoAsortymenty.Data.csproj">
+      <Project>{4c6a3ebb-19a1-4244-9d3e-75e475602424}</Project>
+      <Name>InsERTSubiektNexoAsortymenty.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\InsERTSubiektNexoAsortymenty\InsERTSubiektNexoAsortymenty.csproj">
       <Project>{e5c6938c-2a6d-46d9-9f3e-4387f59518f7}</Project>
       <Name>InsERTSubiektNexoAsortymenty</Name>
