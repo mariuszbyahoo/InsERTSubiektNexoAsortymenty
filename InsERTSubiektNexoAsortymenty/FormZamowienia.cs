@@ -114,7 +114,7 @@ namespace InsERTSubiektNexoAsortymenty
                 var dialog = new FormPotwierdzeniaZamowienia(
                     asortymentyZWolumenem, 
                     procesowaneZamowienie.Dane.NumerWewnetrzny.PelnaSygnatura);
-                dialog.Show();
+                dialog.ShowDialog();
                 this.Close();
             }
             else
