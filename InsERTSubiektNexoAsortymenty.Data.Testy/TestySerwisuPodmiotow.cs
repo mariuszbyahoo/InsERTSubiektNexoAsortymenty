@@ -9,9 +9,9 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
 {
 
     [TestClass]
-    public class TestySerwisuKlientow
+    public class TestySerwisuPodmiotow
     {
-        public TestySerwisuKlientow()
+        public TestySerwisuPodmiotow()
         {
 
         }
@@ -39,15 +39,15 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
         #endregion
 
         [TestMethod]
-        public void PodajWszystkichKlientow___Gdy_Wywolany___Zwroci_Liste_Firm_W_Bazie()
+        public void PodajWszystkichKlientow___Gdy_Wywolany___Zwroci_Liste_Podmiotow_W_Bazie()
         {
             // Przygotuj
             var srv = new SerwisKlientow();
             // Działaj
-            var klienci = srv.PodajWszystkichKlientow();
+            var podmioty = srv.PodajWszystkichKlientow();
 
             // Sprawdź
-            klienci.Should().NotBeEmpty();
+            podmioty.Should().NotBeEmpty();
         }
     }
 }

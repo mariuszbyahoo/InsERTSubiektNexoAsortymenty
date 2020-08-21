@@ -72,8 +72,9 @@
   <ItemGroup>
     <Compile Include="TestySerwisuAsortymentow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestySerwisuKlientow.cs" />
+    <Compile Include="TestySerwisuPodmiotow.cs" />
     <Compile Include="TestySerwisuWalut.cs" />
+    <Compile Include="TestySerwisuZamowien.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
