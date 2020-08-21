@@ -21,15 +21,18 @@ namespace InsERTSubiektNexoAsortymenty
 {
     public partial class FormZamowienia : DevExpress.XtraEditors.XtraForm
     {
+        private Podmiot[] _klienci;
         private readonly Asortyment[] _asortymenty;
-        private readonly SerwisPodmiotow _serwisKlientow;
+        private readonly SerwisPodmiotow _serwisPodmiotow;
+        private readonly SerwisZamowien _serwisZamowien;
         private readonly Dictionary<int, int> _wolumenZamowionychProduktow;
 
     public FormZamowienia(Asortyment[] asortymenty)
         {
             InitializeComponent();
             _asortymenty = asortymenty;
-            _serwisKlientow = new SerwisPodmiotow();
+            _serwisPodmiotow = new SerwisPodmiotow();
+            _serwisZamowien = new SerwisZamowien();
             _wolumenZamowionychProduktow = new Dictionary<int, int>();
         }
 
@@ -51,14 +54,14 @@ namespace InsERTSubiektNexoAsortymenty
             }
             var kolumnaIlosc = new KolumnaIlosc(widokTabeliWybranychProduktow);
 
-            var klienci = _serwisKlientow.PodajWszystkieFirmy();
+            _klienci = _serwisPodmiotow.PodajWszystkieFirmy();
 
             // Zapełnienie pola wyboru
             ComboBoxItemCollection zbiorKlientowDoWyboru = this.poleWyboruKlienta.Properties.Items;
             zbiorKlientowDoWyboru.BeginUpdate();
-            for (int i = 0; i < klienci.Length; i++)
+            for (int i = 0; i < _klienci.Length; i++)
             {
-                zbiorKlientowDoWyboru.Add(new KlientInfo(klienci[i]));
+                zbiorKlientowDoWyboru.Add(new KlientInfo(_klienci[i]));
             }
             zbiorKlientowDoWyboru.EndUpdate();
         }
@@ -94,7 +97,25 @@ namespace InsERTSubiektNexoAsortymenty
         {
             if(this.poleWyboruKlienta.SelectedIndex > -1)
             {
-                // Dodaj zamówienie poprzez API
+                var magazynGlowny = "MAG"; // Nie wskazano potrzeby wybrania magazynu
+                var zamawiajacy = _klienci[this.poleWyboruKlienta.SelectedIndex];
+                var asortymentyZWolumenem = new Dictionary<Asortyment, decimal>();
+                for (int i = 0; i < _asortymenty.Length; i++)
+                {
+                    asortymentyZWolumenem.Add(_asortymenty[i], _wolumenZamowionychProduktow[i]);
+                }
+                // Poniższe do zmiany, nie wskazano w wymaganiach póki co jak załatwić kwestię osoby wystawiającej dokument.
+                var wystawiajacy = _serwisPodmiotow.PodajWszystkiePodmioty().Where(p => p.Osoba != null).FirstOrDefault().Osoba;
+
+                var procesowaneZamowienie = _serwisZamowien.DodajZamowienie(
+                    zamawiajacy, wystawiajacy, magazynGlowny, 
+                    asortymentyZWolumenem);
+
+                var dialog = new FormPotwierdzeniaZamowienia(
+                    asortymentyZWolumenem, 
+                    procesowaneZamowienie.Dane.NumerWewnetrzny.PelnaSygnatura);
+                dialog.Show();
+                this.Close();
             }
             else
             {

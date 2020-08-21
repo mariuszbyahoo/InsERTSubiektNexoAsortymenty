@@ -86,6 +86,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormPotwierdzeniaZamowienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPotwierdzeniaZamowienia.Designer.cs">
+      <DependentUpon>FormPotwierdzeniaZamowienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormZamowienia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormPotwierdzeniaZamowienia.resx">
+      <DependentUpon>FormPotwierdzeniaZamowienia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormZamowienia.resx">
       <DependentUpon>FormZamowienia.cs</DependentUpon>
     </EmbeddedResource>
