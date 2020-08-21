@@ -119,7 +119,8 @@ namespace InsERTSubiektNexoAsortymenty
             }
             else
             {
-                // Wyświetl komunikat o niedokonanym wyborze Klienta.
+                var dialog = new FormBlednegoZamawiajacego();
+                dialog.ShowDialog();
             }
         }
     }
