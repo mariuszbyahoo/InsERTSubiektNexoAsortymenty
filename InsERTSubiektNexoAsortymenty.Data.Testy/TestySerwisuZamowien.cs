@@ -46,5 +46,29 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
             var czyUsunieto = zam.Usun();
             czyUsunieto.Should().BeTrue();
         }
+
+        // Po wytłumaczenie komentarza tego testu patrz SerwisZamowien.cs
+        //[TestMethod]
+        //public void UsunZamowienie___Gdy_Wywolany_Poprawnie___Zwroci_True_I_Usunie_Podane_Zamowienie()
+        //{
+        //    // Przygotuj
+        //    var wolumenZamowienia = 1m;
+        //    var asortyment = _srvAsortymentow.PodajKonkretnyAsortyment(0);
+        //    var podmioty = _srvKlientow.PodajWszystkiePodmioty();
+        //    var klient = podmioty.FirstOrDefault();
+
+        //    var wystawiajacy = podmioty.Where(f => f.Osoba != null && !(f.Id.Equals(klient.Id))).FirstOrDefault();
+        //    var srv = new SerwisZamowien();
+        //    var zamowioneAsortymenty = new Dictionary<Asortyment, decimal>();
+        //    zamowioneAsortymenty.Add(asortyment, wolumenZamowienia);
+        //    // Działaj
+        //    var zam = srv.DodajZamowienie(klient, wystawiajacy.Osoba, symbolGlownegoMagazynu, zamowioneAsortymenty);
+        //    zam.Should().NotBeNull();
+        //    zam.Should().BeAssignableTo<IZamowienieOdKlienta>();
+        //    var czyUsunieto = srv.UsunZamowienie(zam.Dane.Id);
+
+        //    // Sprawdź
+        //    czyUsunieto.Should().BeTrue();
+        //}
     }
 }

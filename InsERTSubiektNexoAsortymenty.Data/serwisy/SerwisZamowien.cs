@@ -53,5 +53,18 @@ namespace InsERTSubiektNexoAsortymenty.Data.Serwisy
             else
                 throw new InvalidOperationException("Zapis zamówienia się nie powiódł");
         }
+
+        //public bool UsunZamowienie(int IdZamowieniaDoWykasowania)
+        //{
+        //    var mgrZamowien = _uchwyt.PodajObiektTypu<IZamowieniaOdKlientow>();
+
+        // Ta metoda wyrzuci mi wyjątek, a jako powód pokazuje że proprty "key" jest nullem, co jest co najmniej dziwne 
+        // jako że przyporządkowuję mu ID, wolę zająć się wtenczas wymaganiami do spełnienia w ticket'ie a te sprawę
+        // zostawię sobie na później
+
+        //    var szukane = new DokumentZK() { Id = IdZamowieniaDoWykasowania };
+        //    var zamowienie = mgrZamowien.Znajdz(szukane);
+        //    return zamowienie.Usun();
+        //}
     }
 }
