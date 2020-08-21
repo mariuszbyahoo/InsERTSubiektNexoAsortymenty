@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace InsERTSubiektNexoAsortymenty.Data.Serwisy
 {
+    /// <summary>
+    /// Póki co pozostawiłem go takiego jak jest, nieużywany jako że ustaliliśmy żeby nie pokazywać symboli walut.
+    /// </summary>
     public class SerwisWalut : BazowySerwisModeluDanych
     {
         public IList<Waluta> PodajWaluty()
