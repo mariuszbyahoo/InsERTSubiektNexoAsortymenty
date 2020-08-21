@@ -13,13 +13,13 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
     public class TestySerwisuZamowien
     {
         private readonly SerwisAsortymentow _srvAsortymentow;
-        private readonly SerwisKlientow _srvKlientow;
+        private readonly SerwisPodmiotow _srvKlientow;
         private readonly string symbolGlownegoMagazynu = "MAG";
 
         public TestySerwisuZamowien()
         {
             _srvAsortymentow = new SerwisAsortymentow();
-            _srvKlientow = new SerwisKlientow();
+            _srvKlientow = new SerwisPodmiotow();
         }
 
         [TestMethod]
@@ -28,7 +28,7 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
             // Przygotuj
             var wolumenZamowienia = 1m;
             var asortyment = _srvAsortymentow.PodajKonkretnyAsortyment(0);
-            var firmy = _srvKlientow.PodajWszystkichKlientow();
+            var firmy = _srvKlientow.PodajWszystkiePodmioty();
             var klient = firmy.Where(f => f.NazwaSkrocona.Equals("Centrala ZUS")).FirstOrDefault();
             var wystawiajacy = firmy.Where(f => f.Osoba != null).FirstOrDefault();
             var srv = new SerwisZamowien();

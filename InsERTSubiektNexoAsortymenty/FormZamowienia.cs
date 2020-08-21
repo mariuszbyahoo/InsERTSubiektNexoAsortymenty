@@ -22,14 +22,14 @@ namespace InsERTSubiektNexoAsortymenty
     public partial class FormZamowienia : DevExpress.XtraEditors.XtraForm
     {
         private readonly Asortyment[] _asortymenty;
-        private readonly SerwisKlientow _serwisKlientow;
+        private readonly SerwisPodmiotow _serwisKlientow;
         private readonly Dictionary<int, int> _wolumenZamowionychProduktow;
 
     public FormZamowienia(Asortyment[] asortymenty)
         {
             InitializeComponent();
             _asortymenty = asortymenty;
-            _serwisKlientow = new SerwisKlientow();
+            _serwisKlientow = new SerwisPodmiotow();
             _wolumenZamowionychProduktow = new Dictionary<int, int>();
         }
 
@@ -51,7 +51,7 @@ namespace InsERTSubiektNexoAsortymenty
             }
             var kolumnaIlosc = new KolumnaIlosc(widokTabeliWybranychProduktow);
 
-            var klienci = _serwisKlientow.PodajWszystkichKlientow();
+            var klienci = _serwisKlientow.PodajWszystkieFirmy();
 
             // Zapełnienie pola wyboru
             ComboBoxItemCollection zbiorKlientowDoWyboru = this.poleWyboruKlienta.Properties.Items;

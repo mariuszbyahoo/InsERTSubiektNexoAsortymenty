@@ -39,12 +39,24 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
         #endregion
 
         [TestMethod]
-        public void PodajWszystkichKlientow___Gdy_Wywolany___Zwroci_Liste_Podmiotow_W_Bazie()
+        public void PodajWszystkiePodmioty___Gdy_Wywolany___Zwroci_Liste_Podmiotow_W_Bazie()
         {
             // Przygotuj
-            var srv = new SerwisKlientow();
+            var srv = new SerwisPodmiotow();
             // Działaj
-            var podmioty = srv.PodajWszystkichKlientow();
+            var podmioty = srv.PodajWszystkiePodmioty();
+
+            // Sprawdź
+            podmioty.Should().NotBeEmpty();
+        }
+
+        [TestMethod]
+        public void PodajWszystkieFirmy___Gdy_Wywolany___Zwroci_Wszystkie_Firmy_W_Bazie()
+        {
+            // Przygotuj
+            var srv = new SerwisPodmiotow();
+            // Działaj
+            var podmioty = srv.PodajWszystkieFirmy();
 
             // Sprawdź
             podmioty.Should().NotBeEmpty();

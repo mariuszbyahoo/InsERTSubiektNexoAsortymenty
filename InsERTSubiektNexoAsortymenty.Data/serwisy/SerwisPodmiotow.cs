@@ -9,16 +9,23 @@ using System.Threading.Tasks;
 
 namespace InsERTSubiektNexoAsortymenty.Data.Serwisy
 {
-    public class SerwisKlientow : BazowySerwisModeluDanych
+    public class SerwisPodmiotow : BazowySerwisModeluDanych
     {
         private readonly Uchwyt _sfera;
 
-        public SerwisKlientow()
+        public SerwisPodmiotow()
         {
             _sfera = PolaczZeSfera();
         }
 
-        public Podmiot[] PodajWszystkichKlientow()
+        public Podmiot[] PodajWszystkiePodmioty()
+        {
+            var mgr = _sfera.PodajObiektTypu<IPodmioty>();
+
+            return mgr.Dane.Wszystkie().ToArray();
+        }
+
+        public Podmiot[] PodajWszystkieFirmy()
         {
             var mgr = _sfera.PodajObiektTypu<IPodmioty>();
 
