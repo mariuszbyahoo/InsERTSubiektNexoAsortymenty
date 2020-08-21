@@ -28,9 +28,10 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
             // Przygotuj
             var wolumenZamowienia = 1m;
             var asortyment = _srvAsortymentow.PodajKonkretnyAsortyment(0);
-            var firmy = _srvKlientow.PodajWszystkiePodmioty();
-            var klient = firmy.Where(f => f.NazwaSkrocona.Equals("Centrala ZUS")).FirstOrDefault();
-            var wystawiajacy = firmy.Where(f => f.Osoba != null).FirstOrDefault();
+            var podmioty = _srvKlientow.PodajWszystkiePodmioty();
+            var klient = podmioty.FirstOrDefault();
+            
+            var wystawiajacy = podmioty.Where(f => f.Osoba != null && !(f.Id.Equals(klient.Id))).FirstOrDefault();
             var srv = new SerwisZamowien();
             var zamowioneAsortymenty = new Dictionary<Asortyment, decimal>();
             zamowioneAsortymenty.Add(asortyment, wolumenZamowienia);
@@ -39,7 +40,11 @@ namespace InsERTSubiektNexoAsortymenty.Data.Testy
 
             // Sprawdź
             zam.Should().NotBeNull();
-            zam.Should().BeOfType<IZamowienieOdKlienta>();
+            zam.Should().BeAssignableTo<IZamowienieOdKlienta>();
+
+            // Wyczyść 
+            var czyUsunieto = zam.Usun();
+            czyUsunieto.Should().BeTrue();
         }
     }
 }
