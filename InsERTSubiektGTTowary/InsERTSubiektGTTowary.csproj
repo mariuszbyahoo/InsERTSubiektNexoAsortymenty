@@ -81,7 +81,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SerwisSubiekta.cs" />
+    <Compile Include="Srv\SerwisKontrahentow.cs" />
+    <Compile Include="Srv\AbstrakcyjnySerwisSubiekta.cs" />
+    <Compile Include="Srv\SerwisTowarow.cs" />
+    <Compile Include="Srv\SerwisZamowien.cs" />
     <EmbeddedResource Include="FormBlednegoZamawiajacego.resx">
       <DependentUpon>FormBlednegoZamawiajacego.cs</DependentUpon>
     </EmbeddedResource>

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using InsERTSubiektNexoAsortymenty.Data.poco;
 using DevExpress.XtraEditors.Controls;
 using InsERTSubiektNexoAsortymenty.Data.Poco;
+using InsERTSubiektGTTowary.Srv;
 
 namespace InsERTSubiektGTTowary
 {
@@ -18,12 +19,14 @@ namespace InsERTSubiektGTTowary
     {
         private readonly IEnumerable<KlientInfo> _kontrahenci;
         private readonly Dictionary<int, int> _wolumenZamowionychProduktow;
-        private readonly SerwisSubiekta _dto;
-        public FormZamowienia(SerwisSubiekta serwis, Towar[] towary)
+        private readonly SerwisKontrahentow _serwisKontrahentow;
+        private readonly SerwisZamowien _serwisZamowien;
+        public FormZamowienia(AbstrakcyjnySerwisSubiekta serwis, Towar[] towary)
         {
             InitializeComponent();
-            _dto = serwis;
-            _kontrahenci = _dto.PodajKontrahentow();
+            _serwisKontrahentow = new SerwisKontrahentow(serwis.Aplikacja);
+            _serwisZamowien = new SerwisZamowien(serwis.Aplikacja);
+            _kontrahenci = _serwisKontrahentow.PodajKontrahentow();
             _wolumenZamowionychProduktow = new Dictionary<int, int>();
             this.gridControl1.DataSource = towary;
         }
@@ -50,7 +53,7 @@ namespace InsERTSubiektGTTowary
                     towaryDoZamowienia[i] = (Towar)this.gridView1.GetRow(i);
                 }
                 var wybranyKontrahent = (KlientInfo)this.comboBoxEdit1.Properties.Items[this.comboBoxEdit1.SelectedIndex];
-                var numer = _dto.ZapiszZamowienie(towaryDoZamowienia, wybranyKontrahent);
+                var numer = _serwisZamowien.ZapiszZamowienie(towaryDoZamowienia, wybranyKontrahent);
 
                 var dialog = new FormPotwierdzeniaZamowienia(towaryDoZamowienia, numer);
                 dialog.ShowDialog();

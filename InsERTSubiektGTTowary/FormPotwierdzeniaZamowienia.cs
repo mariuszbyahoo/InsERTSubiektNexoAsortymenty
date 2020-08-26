@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraEditors;
-using InsERTSubiektNexoAsortymenty.Data.poco;
+using InsERTSubiektNexoAsortymenty.Data.Poco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

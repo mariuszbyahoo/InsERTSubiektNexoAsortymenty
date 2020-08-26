@@ -1,6 +1,8 @@
 ﻿using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
+using InsERTSubiektGTTowary.Srv;
 using InsERTSubiektNexoAsortymenty.Data.poco;
+using InsERTSubiektNexoAsortymenty.Data.Poco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +16,11 @@ namespace InsERTSubiektGTTowary
 {
     public partial class MainView : DevExpress.XtraEditors.XtraForm
     {
-        private readonly SerwisSubiekta _dto;
+        private readonly SerwisTowarow _dto;
 
         public MainView()
         {
-            _dto = new SerwisSubiekta();
+            _dto = new SerwisTowarow();
             InitializeComponent();
         }
 

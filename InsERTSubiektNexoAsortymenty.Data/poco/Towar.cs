@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace InsERTSubiektNexoAsortymenty.Data.poco
+namespace InsERTSubiektNexoAsortymenty.Data.Poco
 {
 
     public class Towar
