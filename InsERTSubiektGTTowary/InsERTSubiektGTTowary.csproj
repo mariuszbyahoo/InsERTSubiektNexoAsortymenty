@@ -61,6 +61,12 @@
     <Compile Include="FormBlednegoZamawiajacego.Designer.cs">
       <DependentUpon>FormBlednegoZamawiajacego.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPotwierdzeniaZamowienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPotwierdzeniaZamowienia.Designer.cs">
+      <DependentUpon>FormPotwierdzeniaZamowienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormZamowienia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="SerwisSubiekta.cs" />
     <EmbeddedResource Include="FormBlednegoZamawiajacego.resx">
       <DependentUpon>FormBlednegoZamawiajacego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPotwierdzeniaZamowienia.resx">
+      <DependentUpon>FormPotwierdzeniaZamowienia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormZamowienia.resx">
       <DependentUpon>FormZamowienia.cs</DependentUpon>

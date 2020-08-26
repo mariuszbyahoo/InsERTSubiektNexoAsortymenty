@@ -53,7 +53,7 @@ namespace InsERTSubiektGTTowary
             towar.Opis = nowyOpis;
             towar.Zapisz();
         }
-        public void ZapiszZamowienie(IEnumerable<Towar> towary, KlientInfo kontrahent)
+        public string ZapiszZamowienie(IEnumerable<Towar> towary, KlientInfo kontrahent)
         {
             var doc = _aplikacja.SuDokumentyManager.DodajZK();
             foreach (var towar in towary)
@@ -63,6 +63,7 @@ namespace InsERTSubiektGTTowary
             }
             doc.KontrahentId = kontrahent.Id;
             doc.Zapisz();
+            return doc.NumerPelny;
         }
         private InsERT.Subiekt PolaczZSubiektem()
         {

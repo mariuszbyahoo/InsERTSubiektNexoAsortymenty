@@ -50,7 +50,11 @@ namespace InsERTSubiektGTTowary
                     towaryDoZamowienia[i] = (Towar)this.gridView1.GetRow(i);
                 }
                 var wybranyKontrahent = (KlientInfo)this.comboBoxEdit1.Properties.Items[this.comboBoxEdit1.SelectedIndex];
-                _dto.ZapiszZamowienie(towaryDoZamowienia, wybranyKontrahent);
+                var numer = _dto.ZapiszZamowienie(towaryDoZamowienia, wybranyKontrahent);
+
+                var dialog = new FormPotwierdzeniaZamowienia(towaryDoZamowienia, numer);
+                dialog.ShowDialog();
+                this.Close();
             }
             else
             {
