@@ -14,11 +14,13 @@ namespace InsERTSubiektNexoAsortymenty.Data.poco
             Cena = cena;
             Symbol = symbol;
             Opis = opis;
+            Ilosc = 1;
         }
         public int IdTowaru { get; }
         public string Nazwa { get; }
         public decimal Cena { get; }
         public string Symbol { get; }
+        public int Ilosc { get; set; }
         private string opis;
         public string Opis
         {

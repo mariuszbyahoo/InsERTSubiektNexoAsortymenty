@@ -30,7 +30,8 @@ namespace InsERTSubiektGTTowary
 
             for (int i = 0; i < this.tabelaWszystkichTowarow.Columns.Count; i++)
             {
-                if (this.tabelaWszystkichTowarow.Columns[i].FieldName.Equals("IdTowaru"))
+                if (this.tabelaWszystkichTowarow.Columns[i].FieldName.Equals("IdTowaru") 
+                    || this.tabelaWszystkichTowarow.Columns[i].FieldName.Equals("Ilosc"))
                 {
                     this.tabelaWszystkichTowarow.Columns[i].Visible = false;
                 }

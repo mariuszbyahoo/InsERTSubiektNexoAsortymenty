@@ -67,9 +67,6 @@
     <Compile Include="FormZamowienia.Designer.cs">
       <DependentUpon>FormZamowienia.cs</DependentUpon>
     </Compile>
-    <Compile Include="KolumnaIlosc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

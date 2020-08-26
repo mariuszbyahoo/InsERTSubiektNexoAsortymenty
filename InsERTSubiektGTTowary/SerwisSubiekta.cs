@@ -58,7 +58,8 @@ namespace InsERTSubiektGTTowary
             var doc = _aplikacja.SuDokumentyManager.DodajZK();
             foreach (var towar in towary)
             {
-                doc.Pozycje.Dodaj(towar.IdTowaru);
+                var poz = doc.Pozycje.Dodaj(towar.IdTowaru);
+                poz.IloscJm = towar.Ilosc;
             }
             doc.KontrahentId = kontrahent.Id;
             doc.Zapisz();
