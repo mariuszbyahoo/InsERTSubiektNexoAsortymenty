@@ -22,7 +22,13 @@ namespace InsERTSubiektGTTowary.Srv
             {
                 if (dana.Aktywny)
                 {
-                    var danaDoTabeli = new Towar(dana.Identyfikator, dana.Nazwa, dana.CenaKartotekowa, dana.Symbol, dana.Opis);
+                    decimal cena = 0m;
+                    foreach (var item in dana.Ceny)
+                    {
+                        if(item.Nazwa.Equals("Detaliczna"))
+                            cena = item.Brutto;
+                    }
+                    var danaDoTabeli = new Towar(dana.Identyfikator, dana.Nazwa, cena, dana.Symbol, dana.Opis);
                     rezultat.Add(danaDoTabeli);
                 }
             }
