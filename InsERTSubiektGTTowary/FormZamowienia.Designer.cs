@@ -101,6 +101,7 @@
             this.przyciskAnuluj.Size = new System.Drawing.Size(94, 44);
             this.przyciskAnuluj.TabIndex = 2;
             this.przyciskAnuluj.Text = "Anuluj";
+            this.przyciskAnuluj.Click += new System.EventHandler(this.przyciskAnuluj_Click);
             // 
             // przyciskOk
             // 
@@ -110,6 +111,7 @@
             this.przyciskOk.Size = new System.Drawing.Size(87, 44);
             this.przyciskOk.TabIndex = 3;
             this.przyciskOk.Text = "OK";
+            this.przyciskOk.Click += new System.EventHandler(this.przyciskOk_Click);
             // 
             // FormZamowienia
             // 

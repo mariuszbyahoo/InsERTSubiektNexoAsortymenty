@@ -17,10 +17,14 @@ namespace InsERTSubiektGTTowary
     public partial class FormZamowienia : DevExpress.XtraEditors.XtraForm
     {
         private readonly IEnumerable<KlientInfo> _kontrahenci;
-        public FormZamowienia(Towar[] towary, IEnumerable<KlientInfo> kontrahenci)
+        private readonly IEnumerable<Towar> _towary;
+        private readonly SerwisSubiekta _dto;
+        public FormZamowienia(SerwisSubiekta serwis, Towar[] towary)
         {
             InitializeComponent();
-            _kontrahenci = kontrahenci;
+            _dto = serwis;
+            _kontrahenci = _dto.PodajKontrahentow();
+            _towary = towary;
             this.gridControl1.DataSource = towary;
         }
 
@@ -34,6 +38,25 @@ namespace InsERTSubiektGTTowary
                 zbiorKlientowDoWyboru.Add(k);
             }
             zbiorKlientowDoWyboru.EndUpdate();
+        }
+
+        private void przyciskOk_Click(object sender, EventArgs e)
+        {
+            if (this.comboBoxEdit1.SelectedIndex > -1)
+            {
+                var wybranyKontrahent = (KlientInfo)this.comboBoxEdit1.Properties.Items[this.comboBoxEdit1.SelectedIndex];
+                _dto.ZapiszZamowienie(_towary, wybranyKontrahent);
+            }
+            else
+            {
+                // wyświetl okno z błędem!
+            }
+        }
+
+        private void przyciskAnuluj_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            this.Close();
         }
     }
 }

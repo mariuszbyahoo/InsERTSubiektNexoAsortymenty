@@ -33,14 +33,36 @@ namespace InsERTSubiektGTTowary
             }
             return rezultat;
         }
-
+        public BindingList<KlientInfo> PodajKontrahentow()
+        {
+            var kol = _aplikacja.KontrahenciManager.OtworzKolekcje();
+            var rezultat = new BindingList<KlientInfo>();
+            foreach (dynamic k in kol)
+            {
+                if (k.Aktywny)
+                {
+                    var danaDoTabeli = new KlientInfo(k.Nazwa, k.NIP, k.Identyfikator);
+                    rezultat.Add(danaDoTabeli);
+                }
+            }
+            return rezultat;
+        }
         public void ZmienOpis(string symbol, string nowyOpis)
         {
             var towar = _aplikacja.TowaryManager.WczytajTowar(symbol);
             towar.Opis = nowyOpis;
             towar.Zapisz();
         }
-
+        public void ZapiszZamowienie(IEnumerable<Towar> towary, KlientInfo kontrahent)
+        {
+            var doc = _aplikacja.SuDokumentyManager.DodajZK();
+            foreach (var towar in towary)
+            {
+                doc.Pozycje.Dodaj(towar.IdTowaru);
+            }
+            doc.KontrahentId = kontrahent.Id;
+            doc.Zapisz();
+        }
         private InsERT.Subiekt PolaczZSubiektem()
         {
             var gt = new InsERT.GT();
@@ -60,19 +82,5 @@ namespace InsERTSubiektGTTowary
             return sgt;
         }
 
-        public BindingList<KlientInfo> PodajKontrahentow()
-        {
-            var kol = _aplikacja.KontrahenciManager.OtworzKolekcje();
-            var rezultat = new BindingList<KlientInfo>();
-            foreach (dynamic k in kol)
-            {
-                if (k.Aktywny)
-                {
-                    var danaDoTabeli = new KlientInfo(k.Nazwa, k.NIP, k.Identyfikator);
-                    rezultat.Add(danaDoTabeli);
-                }
-            }
-            return rezultat;
-        }
     }
 }
