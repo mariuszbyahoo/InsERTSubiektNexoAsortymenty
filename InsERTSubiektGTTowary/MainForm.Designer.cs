@@ -31,9 +31,9 @@ namespace InsERTSubiektGTTowary
         private void InitializeComponent()
         {
             this.mainPanel = new DevExpress.XtraEditors.PanelControl();
+            this.przyciskZamowienia = new DevExpress.XtraEditors.SimpleButton();
             this.tabelaTowarow = new DevExpress.XtraGrid.GridControl();
             this.tabelaWszystkichTowarow = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.przyciskZamowienia = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainPanel)).BeginInit();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaTowarow)).BeginInit();
@@ -48,6 +48,18 @@ namespace InsERTSubiektGTTowary
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(737, 88);
             this.mainPanel.TabIndex = 0;
+            // 
+            // przyciskZamowienia
+            // 
+            this.przyciskZamowienia.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.przyciskZamowienia.Appearance.Options.UseFont = true;
+            this.przyciskZamowienia.Dock = System.Windows.Forms.DockStyle.Left;
+            this.przyciskZamowienia.Location = new System.Drawing.Point(2, 2);
+            this.przyciskZamowienia.Name = "przyciskZamowienia";
+            this.przyciskZamowienia.Size = new System.Drawing.Size(94, 84);
+            this.przyciskZamowienia.TabIndex = 0;
+            this.przyciskZamowienia.Text = "Zamów";
+            this.przyciskZamowienia.Click += new System.EventHandler(this.przyciskZamowienia_Click);
             // 
             // tabelaTowarow
             // 
@@ -64,19 +76,8 @@ namespace InsERTSubiektGTTowary
             // 
             this.tabelaWszystkichTowarow.GridControl = this.tabelaTowarow;
             this.tabelaWszystkichTowarow.Name = "tabelaWszystkichTowarow";
+            this.tabelaWszystkichTowarow.OptionsSelection.MultiSelect = true;
             this.tabelaWszystkichTowarow.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.tabelaTowarow_CellValueChanged);
-            // 
-            // przyciskZamowienia
-            // 
-            this.przyciskZamowienia.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.przyciskZamowienia.Appearance.Options.UseFont = true;
-            this.przyciskZamowienia.Dock = System.Windows.Forms.DockStyle.Left;
-            this.przyciskZamowienia.Location = new System.Drawing.Point(2, 2);
-            this.przyciskZamowienia.Name = "przyciskZamowienia";
-            this.przyciskZamowienia.Size = new System.Drawing.Size(94, 84);
-            this.przyciskZamowienia.TabIndex = 0;
-            this.przyciskZamowienia.Text = "Zamów";
-            this.przyciskZamowienia.Click += new System.EventHandler(this.przyciskZamowienia_Click);
             // 
             // MainView
             // 

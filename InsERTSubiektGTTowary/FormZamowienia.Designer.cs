@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.przyciskOk = new DevExpress.XtraEditors.SimpleButton();
+            this.przyciskAnuluj = new DevExpress.XtraEditors.SimpleButton();
+            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
-            this.przyciskAnuluj = new DevExpress.XtraEditors.SimpleButton();
-            this.przyciskOk = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
@@ -53,6 +53,35 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(816, 100);
             this.panelControl1.TabIndex = 0;
+            // 
+            // przyciskOk
+            // 
+            this.przyciskOk.Dock = System.Windows.Forms.DockStyle.Right;
+            this.przyciskOk.Location = new System.Drawing.Point(727, 54);
+            this.przyciskOk.Name = "przyciskOk";
+            this.przyciskOk.Size = new System.Drawing.Size(87, 44);
+            this.przyciskOk.TabIndex = 3;
+            this.przyciskOk.Text = "OK";
+            this.przyciskOk.Click += new System.EventHandler(this.przyciskOk_Click);
+            // 
+            // przyciskAnuluj
+            // 
+            this.przyciskAnuluj.Dock = System.Windows.Forms.DockStyle.Left;
+            this.przyciskAnuluj.Location = new System.Drawing.Point(2, 54);
+            this.przyciskAnuluj.Name = "przyciskAnuluj";
+            this.przyciskAnuluj.Size = new System.Drawing.Size(94, 44);
+            this.przyciskAnuluj.TabIndex = 2;
+            this.przyciskAnuluj.Text = "Anuluj";
+            this.przyciskAnuluj.Click += new System.EventHandler(this.przyciskAnuluj_Click);
+            // 
+            // splitterControl1
+            // 
+            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.splitterControl1.Location = new System.Drawing.Point(2, 42);
+            this.splitterControl1.Name = "splitterControl1";
+            this.splitterControl1.Size = new System.Drawing.Size(812, 12);
+            this.splitterControl1.TabIndex = 1;
+            this.splitterControl1.TabStop = false;
             // 
             // comboBoxEdit1
             // 
@@ -83,35 +112,7 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // splitterControl1
-            // 
-            this.splitterControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitterControl1.Location = new System.Drawing.Point(2, 42);
-            this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(812, 12);
-            this.splitterControl1.TabIndex = 1;
-            this.splitterControl1.TabStop = false;
-            // 
-            // przyciskAnuluj
-            // 
-            this.przyciskAnuluj.Dock = System.Windows.Forms.DockStyle.Left;
-            this.przyciskAnuluj.Location = new System.Drawing.Point(2, 54);
-            this.przyciskAnuluj.Name = "przyciskAnuluj";
-            this.przyciskAnuluj.Size = new System.Drawing.Size(94, 44);
-            this.przyciskAnuluj.TabIndex = 2;
-            this.przyciskAnuluj.Text = "Anuluj";
-            this.przyciskAnuluj.Click += new System.EventHandler(this.przyciskAnuluj_Click);
-            // 
-            // przyciskOk
-            // 
-            this.przyciskOk.Dock = System.Windows.Forms.DockStyle.Right;
-            this.przyciskOk.Location = new System.Drawing.Point(727, 54);
-            this.przyciskOk.Name = "przyciskOk";
-            this.przyciskOk.Size = new System.Drawing.Size(87, 44);
-            this.przyciskOk.TabIndex = 3;
-            this.przyciskOk.Text = "OK";
-            this.przyciskOk.Click += new System.EventHandler(this.przyciskOk_Click);
+            this.gridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
             // 
             // FormZamowienia
             // 
