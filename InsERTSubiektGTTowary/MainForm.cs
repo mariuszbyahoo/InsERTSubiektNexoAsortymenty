@@ -56,7 +56,7 @@ namespace InsERTSubiektGTTowary
                 wybraneEncje[i] = (Towar)encja;
             }
             // I tutaj wywołaj okno dialogowe jako callback
-            var dialog = new FormZamowienia(wybraneEncje);
+            var dialog = new FormZamowienia(wybraneEncje, _dto.PodajKontrahentow());
             dialog.ShowDialog();
         }
     }

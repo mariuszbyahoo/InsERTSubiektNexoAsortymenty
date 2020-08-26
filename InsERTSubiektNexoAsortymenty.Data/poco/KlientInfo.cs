@@ -14,6 +14,13 @@ namespace InsERTSubiektNexoAsortymenty.Data.Poco
             Id = podmiot.Id;
         }
 
+        public KlientInfo(string nazwa, string nip, int id)
+        {
+            Nazwa = nazwa;
+            NIP = nip;
+            Id = id;
+        }
+
         public override string ToString()
         {
             var rezultat = this.Nazwa;

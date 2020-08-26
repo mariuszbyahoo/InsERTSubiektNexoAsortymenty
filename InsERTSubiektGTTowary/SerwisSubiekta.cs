@@ -1,4 +1,5 @@
 ﻿using InsERTSubiektNexoAsortymenty.Data.poco;
+using InsERTSubiektNexoAsortymenty.Data.Poco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,21 @@ namespace InsERTSubiektGTTowary
             sgt = (InsERT.Subiekt)gt.Uruchom((int)InsERT.UruchomDopasujEnum.gtaUruchomDopasuj, (int)InsERT.UruchomEnum.gtaUruchomWTle);
             sgt.Okno.Widoczne = false;
             return sgt;
+        }
+
+        public BindingList<KlientInfo> PodajKontrahentow()
+        {
+            var kol = _aplikacja.KontrahenciManager.OtworzKolekcje();
+            var rezultat = new BindingList<KlientInfo>();
+            foreach (dynamic k in kol)
+            {
+                if (k.Aktywny)
+                {
+                    var danaDoTabeli = new KlientInfo(k.Nazwa, k.NIP, k.Identyfikator);
+                    rezultat.Add(danaDoTabeli);
+                }
+            }
+            return rezultat;
         }
     }
 }
