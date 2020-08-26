@@ -4,7 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using InsERT.Moria.Dokumenty.Logistyka;
 using InsERT.Moria.ModelDanych;
-using InsERTSubiektNexoAsortymenty.Data.Serwisy;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace InsERTSubiektNexoAsortymenty.Data.Testy

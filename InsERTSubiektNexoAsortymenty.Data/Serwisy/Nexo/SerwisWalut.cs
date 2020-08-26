@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace InsERTSubiektNexoAsortymenty.Data.Serwisy
+namespace InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo
 {
     /// <summary>
     /// Póki co pozostawiłem go takiego jak jest, nieużywany jako że ustaliliśmy żeby nie pokazywać symboli walut.

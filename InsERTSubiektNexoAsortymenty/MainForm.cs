@@ -1,8 +1,7 @@
 ﻿using DevExpress.XtraGrid.Views.Base;
 using InsERT.Moria.Asortymenty;
 using InsERT.Moria.ModelDanych;
-using InsERTSubiektNexoAsortymenty.Data;
-using InsERTSubiektNexoAsortymenty.Data.Serwisy;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

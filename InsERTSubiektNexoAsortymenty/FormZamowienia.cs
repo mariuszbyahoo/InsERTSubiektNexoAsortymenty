@@ -13,9 +13,8 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.Data;
 using DevExpress.XtraEditors.Controls;
-using InsERTSubiektNexoAsortymenty.Data;
-using InsERTSubiektNexoAsortymenty.Data.Serwisy;
 using InsERTSubiektNexoAsortymenty.Data.Poco;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo;
 
 namespace InsERTSubiektNexoAsortymenty
 {

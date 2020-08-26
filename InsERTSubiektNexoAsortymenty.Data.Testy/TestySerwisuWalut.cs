@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using InsERT.Moria.ModelDanych;
 using InsERTSubiektNexoAsortymenty.Data.Serwisy;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;

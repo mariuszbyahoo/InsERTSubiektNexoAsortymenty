@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentAssertions;
 using InsERTSubiektNexoAsortymenty.Data.Serwisy;
+using InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo;
 
 namespace InsERTSubiektNexoAsortymenty.Data.Testy
 {

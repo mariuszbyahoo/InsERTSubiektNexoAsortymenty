@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace InsERTSubiektNexoAsortymenty.Data.Serwisy
+namespace InsERTSubiektNexoAsortymenty.Data.Serwisy.Nexo
 {
     public class SerwisAsortymentow : BazowySerwisModeluDanych
     {
