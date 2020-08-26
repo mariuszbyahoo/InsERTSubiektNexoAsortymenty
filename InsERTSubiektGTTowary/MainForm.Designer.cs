@@ -61,6 +61,7 @@ namespace InsERTSubiektGTTowary
             // 
             this.gridView1.GridControl = this.tabelaTowarow;
             this.gridView1.Name = "gridView1";
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // MainView
             // 

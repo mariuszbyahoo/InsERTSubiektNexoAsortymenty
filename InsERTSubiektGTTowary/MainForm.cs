@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using InsERTSubiektNexoAsortymenty.Data.poco;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,15 +22,7 @@ namespace InsERTSubiektGTTowary
             InitializeComponent();
         }
 
-        private void gridView1_CellValueChanged(object sender, CellValueChangedEventArgs e)
-        {
-            //if (e.Column.FieldName.Equals("Opis"))
-            //{
-            //    var procesowanyAsortyment = _dto.PodajKonkretnyAsortyment(e.RowHandle);
 
-            //    _dto.ZmienOpis(procesowanyAsortyment.Symbol, e.Value.ToString());
-            //}
-        }
 
         private void MainView_Load(object sender, EventArgs e)
         {
@@ -41,6 +35,14 @@ namespace InsERTSubiektGTTowary
                     this.gridView1.Columns[i].Visible = false;
                 }
             }
+        }
+
+        private void gridView1_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            GridView gridView = this.tabelaTowarow.FocusedView as GridView;
+            var wybranyTowar = (Towar)gridView.GetRow(gridView.FocusedRowHandle);
+
+            _dto.ZmienOpis(wybranyTowar.Symbol, wybranyTowar.Opis);
         }
     }
 }

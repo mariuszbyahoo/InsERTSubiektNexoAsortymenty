@@ -33,6 +33,13 @@ namespace InsERTSubiektGTTowary
             return rezultat;
         }
 
+        public void ZmienOpis(string symbol, string nowyOpis)
+        {
+            var towar = _aplikacja.TowaryManager.WczytajTowar(symbol);
+            towar.Opis = nowyOpis;
+            towar.Zapisz();
+        }
+
         private InsERT.Subiekt PolaczZSubiektem()
         {
             var gt = new InsERT.GT();
