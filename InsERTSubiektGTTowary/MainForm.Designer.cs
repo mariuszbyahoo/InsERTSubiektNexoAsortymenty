@@ -32,14 +32,17 @@ namespace InsERTSubiektGTTowary
         {
             this.mainPanel = new DevExpress.XtraEditors.PanelControl();
             this.tabelaTowarow = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tabelaWszystkichTowarow = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.przyciskZamowienia = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.mainPanel)).BeginInit();
+            this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabelaTowarow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaWszystkichTowarow)).BeginInit();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.przyciskZamowienia);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.mainPanel.Location = new System.Drawing.Point(0, 0);
             this.mainPanel.Name = "mainPanel";
@@ -50,18 +53,30 @@ namespace InsERTSubiektGTTowary
             // 
             this.tabelaTowarow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabelaTowarow.Location = new System.Drawing.Point(0, 88);
-            this.tabelaTowarow.MainView = this.gridView1;
+            this.tabelaTowarow.MainView = this.tabelaWszystkichTowarow;
             this.tabelaTowarow.Name = "tabelaTowarow";
             this.tabelaTowarow.Size = new System.Drawing.Size(737, 254);
             this.tabelaTowarow.TabIndex = 1;
             this.tabelaTowarow.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.tabelaWszystkichTowarow});
             // 
-            // gridView1
+            // tabelaWszystkichTowarow
             // 
-            this.gridView1.GridControl = this.tabelaTowarow;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.tabelaWszystkichTowarow.GridControl = this.tabelaTowarow;
+            this.tabelaWszystkichTowarow.Name = "tabelaWszystkichTowarow";
+            this.tabelaWszystkichTowarow.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.tabelaTowarow_CellValueChanged);
+            // 
+            // przyciskZamowienia
+            // 
+            this.przyciskZamowienia.Appearance.Font = new System.Drawing.Font("Tahoma", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.przyciskZamowienia.Appearance.Options.UseFont = true;
+            this.przyciskZamowienia.Dock = System.Windows.Forms.DockStyle.Left;
+            this.przyciskZamowienia.Location = new System.Drawing.Point(2, 2);
+            this.przyciskZamowienia.Name = "przyciskZamowienia";
+            this.przyciskZamowienia.Size = new System.Drawing.Size(94, 84);
+            this.przyciskZamowienia.TabIndex = 0;
+            this.przyciskZamowienia.Text = "Zamów";
+            this.przyciskZamowienia.Click += new System.EventHandler(this.przyciskZamowienia_Click);
             // 
             // MainView
             // 
@@ -75,8 +90,9 @@ namespace InsERTSubiektGTTowary
             this.Text = "Subiekt GT Towary";
             this.Load += new System.EventHandler(this.MainView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mainPanel)).EndInit();
+            this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabelaTowarow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabelaWszystkichTowarow)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,7 +101,8 @@ namespace InsERTSubiektGTTowary
 
         private DevExpress.XtraEditors.PanelControl mainPanel;
         private DevExpress.XtraGrid.GridControl tabelaTowarow;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView tabelaWszystkichTowarow;
+        private DevExpress.XtraEditors.SimpleButton przyciskZamowienia;
     }
 }
 

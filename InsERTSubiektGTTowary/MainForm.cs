@@ -28,21 +28,36 @@ namespace InsERTSubiektGTTowary
         {
             this.tabelaTowarow.DataSource = _dto.PodajWszystkieTowary();
 
-            for (int i = 0; i < this.gridView1.Columns.Count; i++)
+            for (int i = 0; i < this.tabelaWszystkichTowarow.Columns.Count; i++)
             {
-                if (this.gridView1.Columns[i].FieldName.Equals("IdTowaru"))
+                if (this.tabelaWszystkichTowarow.Columns[i].FieldName.Equals("IdTowaru"))
                 {
-                    this.gridView1.Columns[i].Visible = false;
+                    this.tabelaWszystkichTowarow.Columns[i].Visible = false;
                 }
             }
         }
 
-        private void gridView1_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        private void tabelaTowarow_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             GridView gridView = this.tabelaTowarow.FocusedView as GridView;
             var wybranyTowar = (Towar)gridView.GetRow(gridView.FocusedRowHandle);
 
             _dto.ZmienOpis(wybranyTowar.Symbol, wybranyTowar.Opis);
+        }
+
+        private void przyciskZamowienia_Click(object sender, EventArgs e)
+        {
+            var wybraneWiersze = this.tabelaWszystkichTowarow.GetSelectedRows();
+
+            var wybraneEncje = new Towar[wybraneWiersze.Length];
+            for (int i = 0; i < wybraneWiersze.Length; i++)
+            {
+                var encja = this.tabelaWszystkichTowarow.GetRow(wybraneWiersze[i]);
+                wybraneEncje[i] = (Towar)encja;
+            }
+            // I tutaj wywołaj okno dialogowe jako callback
+            var dialog = new FormZamowienia(wybraneEncje);
+            dialog.ShowDialog();
         }
     }
 }
