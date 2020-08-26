@@ -49,7 +49,8 @@ namespace InsERTSubiektGTTowary
             }
             else
             {
-                // wyświetl okno z błędem!
+                var dialog = new FormBlednegoZamawiajacego();
+                dialog.Show(this);
             }
         }
 
