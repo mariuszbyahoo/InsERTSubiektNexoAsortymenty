@@ -1,10 +1,5 @@
-﻿using InsERTSubiektNexoAsortymenty.Data.poco;
-using InsERTSubiektNexoAsortymenty.Data.Poco;
-using System;
+﻿using InsERTSubiektNexoAsortymenty.Data.Poco;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InsERTSubiektGTTowary.Srv
 {

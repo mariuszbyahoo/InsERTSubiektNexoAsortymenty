@@ -1,18 +1,8 @@
-﻿using InsERTSubiektGTTowary.Srv;
-using InsERTSubiektNexoAsortymenty.Data.poco;
-using InsERTSubiektNexoAsortymenty.Data.Poco;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace InsERTSubiektGTTowary
+﻿namespace InsERTSubiektGTTowary.Srv
 {
     public abstract class AbstrakcyjnySerwisSubiekta 
     {
-        public InsERT.Subiekt Aplikacja { get; set; }
+        public InsERT.Subiekt Aplikacja { get; private protected set; }
 
         public InsERT.Subiekt PolaczZSubiektem()
         {
